@@ -1,0 +1,127 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "连接 68宠物",
+        "description": "使用 68宠物 App 的手机号与密码登录。注意：登录会使手机 App 上的会话失效。",
+        "data": {
+          "phone": "手机号",
+          "password": "密码"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "手机号或密码错误",
+      "cannot_connect": "无法连接 68宠物 服务器",
+      "no_pet": "该账号下没有宠物",
+      "unknown": "未知错误"
+    },
+    "abort": {
+      "already_configured": "该账号已经配置过了"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "68宠物 选项",
+        "data": {
+          "scan_interval": "轮询间隔（秒）",
+          "coord_system": "坐标系"
+        },
+        "description": "坐标系：HA 自带地图选 WGS-84；使用高德类自定义卡片时选 GCJ-02（不转换）。切换后需要重载集成生效。"
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "steps": {
+        "name": "今日步数"
+      },
+      "distance": {
+        "name": "今日里程"
+      },
+      "calories": {
+        "name": "今日消耗"
+      },
+      "battery": {
+        "name": "定位器电量"
+      },
+      "signal": {
+        "name": "信号强度"
+      },
+      "grade": {
+        "name": "运动称号"
+      },
+      "avg7_steps": {
+        "name": "7日平均步数"
+      },
+      "avg7_distance": {
+        "name": "7日平均里程"
+      },
+      "total_steps": {
+        "name": "累计步数"
+      },
+      "accuracy": {
+        "name": "定位精度"
+      },
+      "address": {
+        "name": "所在位置"
+      },
+      "last_locate": {
+        "name": "最后定位时间"
+      },
+      "imei": {
+        "name": "设备 IMEI"
+      },
+      "token_expiry": {
+        "name": "Token 剩余有效期"
+      }
+    },
+    "binary_sensor": {
+      "tracker_bound": {
+        "name": "已绑定定位器"
+      },
+      "online": {
+        "name": "定位数据在线"
+      },
+      "charging": {
+        "name": "充电中"
+      },
+      "find_pet_mode": {
+        "name": "寻宠模式"
+      },
+      "realtime_mode": {
+        "name": "实时上报模式"
+      },
+      "token_invalid": {
+        "name": "Token 已失效"
+      }
+    }
+  },
+  "services": {
+    "refresh_location": {
+      "name": "刷新定位",
+      "description": "要求定位器立即上报一次当前位置。",
+      "fields": {
+        "pet_no": {
+          "name": "宠物编号",
+          "description": "petNo，可省略改用设备目标"
+        }
+      }
+    },
+    "get_footprint": {
+      "name": "获取历史轨迹",
+      "description": "按日期拉取历史轨迹点，返回坐标列表。",
+      "fields": {
+        "pet_no": {
+          "name": "宠物编号",
+          "description": "petNo，可省略改用设备目标"
+        },
+        "date": {
+          "name": "日期",
+          "description": "YYYY-MM-DD，默认今天"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "68宠物",
+  "content_in_root": false,
+  "country": ["CN"],
+  "homeassistant": "2024.11.0",
+  "render_readme": true
+}

@@ -1,0 +1,127 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Connect 68Pet",
+        "description": "Sign in with your 68Pet phone number and password. Note: signing in invalidates the session in the mobile app.",
+        "data": {
+          "phone": "Phone number",
+          "password": "Password"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "Invalid phone number or password",
+      "cannot_connect": "Unable to reach 68Pet cloud",
+      "no_pet": "No pet found on this account",
+      "unknown": "Unknown error"
+    },
+    "abort": {
+      "already_configured": "This account is already configured"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "68Pet options",
+        "data": {
+          "scan_interval": "Polling interval (seconds)",
+          "coord_system": "Coordinate system"
+        },
+        "description": "Coordinate system: choose WGS-84 for the built-in Home Assistant map; choose GCJ-02 (no conversion) for AMap-based custom cards. Reload the integration after changing."
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "steps": {
+        "name": "Steps today"
+      },
+      "distance": {
+        "name": "Distance today"
+      },
+      "calories": {
+        "name": "Calories today"
+      },
+      "battery": {
+        "name": "Tracker battery"
+      },
+      "signal": {
+        "name": "Signal strength"
+      },
+      "grade": {
+        "name": "Activity title"
+      },
+      "avg7_steps": {
+        "name": "7-day average steps"
+      },
+      "avg7_distance": {
+        "name": "7-day average distance"
+      },
+      "total_steps": {
+        "name": "Total steps"
+      },
+      "accuracy": {
+        "name": "Location accuracy"
+      },
+      "address": {
+        "name": "Address"
+      },
+      "last_locate": {
+        "name": "Last located"
+      },
+      "imei": {
+        "name": "Device IMEI"
+      },
+      "token_expiry": {
+        "name": "Token time remaining"
+      }
+    },
+    "binary_sensor": {
+      "tracker_bound": {
+        "name": "Tracker bound"
+      },
+      "online": {
+        "name": "Location online"
+      },
+      "charging": {
+        "name": "Charging"
+      },
+      "find_pet_mode": {
+        "name": "Find-pet mode"
+      },
+      "realtime_mode": {
+        "name": "Realtime reporting"
+      },
+      "token_invalid": {
+        "name": "Token invalid"
+      }
+    }
+  },
+  "services": {
+    "refresh_location": {
+      "name": "Refresh location",
+      "description": "Ask the tracker to report its position now.",
+      "fields": {
+        "pet_no": {
+          "name": "Pet number",
+          "description": "petNo; omit to use the target device"
+        }
+      }
+    },
+    "get_footprint": {
+      "name": "Get footprint",
+      "description": "Fetch historical track points for a date.",
+      "fields": {
+        "pet_no": {
+          "name": "Pet number",
+          "description": "petNo; omit to use the target device"
+        },
+        "date": {
+          "name": "Date",
+          "description": "YYYY-MM-DD, defaults to today"
+        }
+      }
+    }
+  }
+}
