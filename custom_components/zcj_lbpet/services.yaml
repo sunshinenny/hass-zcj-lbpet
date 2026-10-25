@@ -1,18 +1,22 @@
 refresh_location:
-  target:
-    device:
-      integration: zcj_lbpet
   fields:
+    device_id:
+      required: true
+      selector:
+        device:
+          integration: zcj_lbpet
     pet_no:
       required: false
       selector:
         text:
 
 get_footprint:
-  target:
-    device:
-      integration: zcj_lbpet
   fields:
+    device_id:
+      required: true
+      selector:
+        device:
+          integration: zcj_lbpet
     pet_no:
       required: false
       selector:
